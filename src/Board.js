@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import Column from './Column.js';
 
 class Board extends Component {
-  constructor(props) {
-    super(props);
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
 
   addCardToColumn = (columnIndex) => {
   }
@@ -12,9 +12,6 @@ class Board extends Component {
   render() {
     return (
       <div className="board">
-        <Column />
-        <Column />
-        <Column />
         <Column />
       </div>
     )

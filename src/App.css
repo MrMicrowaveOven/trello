@@ -12,7 +12,10 @@
   height: 35px;
 }
 
-
 .App {
   text-align: center;
+}
+
+.add-card-button {
+  cursor: pointer;
 }

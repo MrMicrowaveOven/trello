@@ -1,19 +1,16 @@
 import React, { Component } from 'react';
 
 class Card extends Component {
-  constructor(props) {
-    super(props);
-    const content = this.props.content || 'Empty Card';
-
-    this.state = {content: content};
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
 
   moveCard = () => {
-    this.props.removeCard(0)
+    this.props.removeCard(this.props.id)
   }
 
   render() {
-    const {content} = this.state;
+    const {content} = this.props;
     return (
       <div>
         <div className="left-arrow" onClick={this.moveCard}>

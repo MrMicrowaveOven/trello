@@ -9,34 +9,52 @@ class Column extends Component {
 
   addCard = () => {
     let {cards} = this.state;
+    const id = this.getId();
 
-    let cardContent = window.prompt("Enter Card content");
-    cards.push(cardContent);
+    let newCard = {
+      id: id,
+      content: "Empty Card " + id
+    }
+    cards.push(newCard);
     this.setState({cards: cards})
   }
 
-  deleteCard = (cardIndex) => {
-    console.log(cardIndex)
-    let {cards} = this.state;
 
-    cards.splice(cardIndex, 1)
+  getId = () => {
+    const {cards} = this.state;
+    let potId = cards.length === 0
+      ? 1
+      : Math.max.apply(null, cards.map((card) => card.id)) + 1;
+    while (cards.filter((card) => card.id === potId).length > 0) {
+      potId = potId + 1;
+    }
+    return potId
+  }
+
+
+  deleteCard = (cardIndex) => {
+    let {cards} = this.state;
+    const cardToBeDeleted = cards.filter((el) => {
+      return el.id === cardIndex;
+    })[0]
+
+    const indexOfCardToBeDeleted = cards.indexOf(cardToBeDeleted)
+    cards.splice(indexOfCardToBeDeleted, 1)
+
     this.setState({cards: cards})
   }
 
   render() {
-
     const {cards} = this.state;
     return (
       <div className='column'>
         <div className='column-name'>
           Title
         </div>
-        <Card removeCard={this.deleteCard}/>
-        <Card removeCard={this.deleteCard}/>
         {cards.map((value) => {
-          return <Card content={value} removeCard={this.deleteCard}/>
+          return <Card content={value.content} id={value.id} removeCard={this.deleteCard}/>
         })}
-        <div onClick={this.addCard}>
+        <div className='add-card-button' onClick={this.addCard}>
           Add a card!
         </div>
       </div>
