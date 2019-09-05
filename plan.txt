@@ -1,0 +1,27 @@
+App with 4 Columns
+* Each Column has a title and 2 default cards
+
+
+Arrow click on card
+
+Sends call to Column
+
+Column deletes the card, sends call to Board
+
+Board selects appropriate column (Left or Right) and sends an addCardToColumn call.
+
+
+
+XSR attacks
+
+
+
+User to search for used cards
+
+Web crawler finds cars on Craigslist, ebay, saves them to file.
+
+csv of all data
+
+Price, make, model.
+
+"All red honda civics"
