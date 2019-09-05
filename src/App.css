@@ -16,6 +16,22 @@
   text-align: center;
 }
 
-.add-card-button {
+.add-card-button, .left-arrow, .right-arrow {
   cursor: pointer;
+}
+
+.left-arrow, .right-arrow {
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 40px;
+}
+
+.card {
+  display: flex;
+  width: 50%;
+  margin: auto;
+}
+
+.card-content {
+  margin: auto
 }

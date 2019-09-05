@@ -12,13 +12,15 @@ class Card extends Component {
   render() {
     const {content} = this.props;
     return (
-      <div>
-        <div className="left-arrow" onClick={this.moveCard}>
-        {"<"}
+      <div className='card'>
+        <div className='left-arrow' onClick={this.moveCard}>
+        {'<'}
         </div>
+        <div className='card-content'>
         {content}
-        <div className="right-arrow" onClick={this.moveCard}>
-        {">"}
+        </div>
+        <div className='right-arrow' onClick={this.moveCard}>
+        {'>'}
         </div>
       </div>
     )
